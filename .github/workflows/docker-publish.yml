@@ -95,13 +95,7 @@ jobs:
 
 
       - name: Push the Docker Image to Docker hub
-        if: ${{ github.event_name != 'pull_request' }}
-        env:
-          # https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-an-intermediate-environment-variable
-          TAGS: ${{ steps.meta.outputs.tags }}
-        # This step uses the identity token to provision an ephemeral certificate
-        # against the sigstore community Fulcio instance.
-        run: docker push rumanmlk/animated-profile-card:"${TAGS}"
+        run: docker push rumanmlk/animated-profile-card:tagname
 
       
 
