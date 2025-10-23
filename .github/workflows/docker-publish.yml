@@ -13,8 +13,6 @@ env:
   REGISTRY: docker.io 
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
-  USERNAME: rumanmlk
-  PASSWORD: ${{ secrets.PASSWORD }} 
 
 jobs:
   build:
@@ -53,7 +51,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
-          password: LxhnP9Q_%Ufj)xL
+          password: ${{ secrets.PASSWORD }}
 
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
