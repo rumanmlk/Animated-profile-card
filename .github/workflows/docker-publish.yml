@@ -10,12 +10,11 @@ on:
 
 env:
   # Use docker.io for Docker Hub if empty
-  REGISTRY: docker.io
+  REGISTRY: docker.io 
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
   USERNAME: rumanmlk
-  PASSWORD: LxhnP9Q_%Ufj)xL 
-
+  PASSWORD: ${{ secrets.PASSWORD }} 
 
 jobs:
   build:
